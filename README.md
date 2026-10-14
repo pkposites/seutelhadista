@@ -39,7 +39,7 @@ No painel da Netlify: **Forms** lista os envios. Para receber por e-mail: **Proj
 | `form_lead_telhado` | Envio do formulário (`lead_origem: formulario_sdr`) ou confirmação do passo de WhatsApp (`lead_origem`: `hero`, `cta_final`, `botao_flutuante`, `modal_servico`) |
 | `form_submit` | Envio do formulário de orçamento |
 | `whatsapp_click` | Confirmação do passo de WhatsApp |
-| `phone_click` | Clique em qualquer link `tel:` |
+| `phone_click` | Clique em qualquer botão de ligar (`link_location`: `btn-tel-nav`, `btn-tel-hero`, `btn-tel-form`, `btn-tel-footer`, `btn-tel-rodape`, `btn-tel-float`) |
 | `service_modal_open` | Abertura do detalhe de um serviço |
 
 O formulário também dispara a conversão do Google Ads `AW-18035199724/lir8ClDj9Y0cEOyd7ZdD`.

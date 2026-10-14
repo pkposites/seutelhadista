@@ -8,6 +8,8 @@
   <link rel="canonical" href="https://seutelhadista.com.br/">
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <meta name="theme-color" content="#1c1b18">
+  <!-- Evita que o iPhone transforme outros números do texto em links de ligação; os botões de ligar usam tel: explícito -->
+  <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
@@ -106,13 +108,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Seu&nbsp;<span>Telhadista</span>
   </a>
   <div class="nav-cta">
-    <a href="tel:+551150922446" class="btn-ghost" id="btn-tel-nav">
+    <a href="tel:+551150922446" class="btn-ghost btn-tel-nav" id="btn-tel-nav" aria-label="Ligar para (11) 5092-2446">
       <svg width="15" height="15"><use href="#i-phone"/></svg>
-      Ligar
+      <span class="tel-label">(11) 5092-2446</span>
     </a>
     <a href="#orcamento" class="btn-wpp" id="btn-wpp-nav">
       <svg><use href="#i-wpp"/></svg>
-      Pedir orçamento
+      Pedir <span class="nav-wpp-extra">orçamento</span>
     </a>
   </div>
 </nav>
@@ -150,11 +152,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="18" height="18"><use href="#i-wpp"/></svg>
       Falar no WhatsApp
     </a>
+    <a href="tel:+551150922446" class="btn-call btn-call-tel" id="btn-tel-hero" aria-label="Ligar agora para (11) 5092-2446">
+      <svg width="18" height="18"><use href="#i-phone"/></svg>
+      Ligar agora · (11) 5092-2446
+    </a>
   </div>
-  <a href="tel:+551150922446" class="hero-tel" id="btn-tel-hero">
-    <svg width="14" height="14"><use href="#i-phone"/></svg>
-    ou ligue (11) 5092-2446
-  </a>
 
   <div class="hero-trust">
     <div class="trust-item">
@@ -665,6 +667,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <p class="form-privacy">Ao continuar, você concorda em ser contatado pelo WhatsApp. Veja a <a href="https://leadinghub.netlify.app/privacidade/pk_a97a2673c0844746a6a62eaeb35a6b3b" target="_blank" rel="noopener">Política de privacidade</a>.</p>
       </form>
+      <a href="tel:+551150922446" class="form-tel" id="btn-tel-form">
+        <svg width="16" height="16"><use href="#i-phone"/></svg>
+        Prefere falar agora? Ligue <strong>(11) 5092-2446</strong>
+      </a>
     </div>
   </div>
 </section>
@@ -680,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="20" height="20"><use href="#i-wpp"/></svg>
       Chamar no WhatsApp agora
     </a>
-    <a href="tel:+551150922446" class="btn-call" id="btn-tel-footer">
+    <a href="tel:+551150922446" class="btn-call btn-call-tel" id="btn-tel-footer" aria-label="Ligar para (11) 5092-2446">
       <svg width="18" height="18"><use href="#i-phone"/></svg>
       Ligar (11) 5092-2446
     </a>
@@ -695,6 +701,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
   <p>© <span id="year">2026</span> — Toda Grande São Paulo</p>
   <p style="font-size:0.75rem; color: var(--muted);">WhatsApp: (11) 99191-2707</p>
+  <p><a href="tel:+551150922446" id="btn-tel-rodape">Telefone: (11) 5092-2446</a></p>
   <p><a href="privacidade.html">Política de privacidade</a> · <a href="https://leadinghub.netlify.app/privacidade/pk_a97a2673c0844746a6a62eaeb35a6b3b" target="_blank" rel="noopener">Privacidade do Lead Hub</a></p>
 </footer>
 
@@ -703,6 +710,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   href="https://api.whatsapp.com/send?phone=551150922446&text=Oi%2C+vim+do+site+e+quero+um+or%C3%A7amento+de+telhado"
   class="float-wpp" id="btn-wpp-float" data-wpp="botao_flutuante" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg width="28" height="28" style="color:#fff"><use href="#i-wpp"/></svg>
+</a>
+
+<!-- BOTÃO FLUTUANTE DE LIGAÇÃO (celular) — link tel: direto, sem JavaScript no caminho -->
+<a href="tel:+551150922446" class="float-tel" id="btn-tel-float" aria-label="Ligar para (11) 5092-2446">
+  <svg width="24" height="24"><use href="#i-phone"/></svg>
 </a>
 
 <!-- MODAL: detalhe do serviço -->

@@ -129,8 +129,12 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ── Ligações ──
+// Só registra o clique: nunca chama preventDefault nem abre janela, para o
+// celular discar normalmente mesmo se o rastreio falhar.
 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
-  link.addEventListener('click', () => track('phone_click', { link_location: link.id || 'tel' }));
+  link.addEventListener('click', () => {
+    try { track('phone_click', { link_location: link.id || 'tel' }); } catch (e) {}
+  }, { passive: true });
 });
 
 // ── Captura rápida antes do WhatsApp ──
